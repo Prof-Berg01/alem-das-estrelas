@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Missão 01 | O Mistério da Lua</title>
+
+
+    <style>
+        /* =========================
+   REGISTROS SALVOS
+========================= */
+
+.registros-salvos {
+
+    max-width: 850px;
+
+    margin: 50px auto 0;
+
+}
+
+
+.registros-salvos h3 {
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+
+    color: #64d8ff;
+
+}
+
+
+.registro-salvo {
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(12, 31, 52, 0.95),
+            rgba(7, 20, 35, 0.95)
+        );
+
+    border:
+        1px solid rgba(100,216,255,0.15);
+
+}
+
+
+.registro-salvo h4 {
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+}
+
+
+.registro-info {
+
+    color: #aebbd0;
+
+    margin-bottom: 8px;
+
+}
+
+
+.registro-info strong {
+
+    color: #64d8ff;
+
+}
+
+
+.excluir-button {
+
+    margin-top: 20px;
+
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: rgba(255, 80, 80, 0.15);
+
+    color: #ff9b9b;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.excluir-button:hover {
+
+    background: rgba(255, 80, 80, 0.30);
+
+}
+
+
+.sem-registros {
+
+    color: #71839b;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #030712;
+
+            color: white;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px 60px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            background: rgba(3, 7, 18, 0.85);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        .logo span {
+
+            color: #64d8ff;
+        }
+
+
+        header a {
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        header a:hover {
+
+            color: #64d8ff;
+        }
+
+
+
+        /* =========================
+           HERO DA MISSÃO
+        ========================= */
+
+        .mission-hero {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 130px 20px 80px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(100, 216, 255, 0.20),
+                    transparent 35%
+                ),
+
+                #030712;
+        }
+
+
+        .moon {
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 35% 30%,
+                    #ffffff,
+                    #d7d7d7 45%,
+                    #8e8e8e 100%
+                );
+
+            box-shadow:
+
+                0 0 80px
+                rgba(255,255,255,0.25);
+
+            opacity: 0.16;
+
+            right: -80px;
+
+            top: 100px;
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .mission-number {
+
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            border-radius: 30px;
+
+            border: 1px solid rgba(100,216,255,0.4);
+
+            color: #64d8ff;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+
+        h1 {
+
+            font-size: clamp(50px, 8vw, 90px);
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-subtitle {
+
+            color: #aebbd0;
+
+            font-size: 20px;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        section {
+
+            padding: 90px 25px;
+        }
+
+
+        .container {
+
+            max-width: 1050px;
+
+            margin: auto;
+        }
+
+
+        .section-title {
+
+            margin-bottom: 35px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+
+            color: #aebbd0;
+
+            max-width: 800px;
+        }
+
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        .card {
+
+            padding: 28px;
+
+            border-radius: 18px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #10243d,
+                    #081625
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(100,216,255,0.4);
+        }
+
+
+        .card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+
+            color: #aebbd0;
+        }
+
+
+        .icon {
+
+            font-size: 40px;
+
+            margin-bottom: 12px;
+        }
+
+
+
+        /* =========================
+           DESAFIO
+        ========================= */
+
+        .desafio {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #0a1d32,
+                    #0b1020
+                );
+
+            border-top:
+                1px solid rgba(100,216,255,0.15);
+
+            border-bottom:
+                1px solid rgba(100,216,255,0.15);
+        }
+
+
+        .challenge {
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border:
+                1px solid rgba(100,216,255,0.25);
+
+            background:
+                rgba(100,216,255,0.04);
+        }
+
+
+        .challenge strong {
+
+            color: #64d8ff;
+        }
+
+
+
+        /* =========================
+           CHECKLIST
+        ========================= */
+
+        .checklist {
+
+            list-style: none;
+        }
+
+
+        .checklist li {
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+
+            color: #c7d4e6;
+        }
+
+
+        .checklist li::before {
+
+            content: "🔎";
+
+            margin-right: 10px;
+        }
+
+
+
+        /* =========================
+           REGISTRO
+        ========================= */
+
+        .registro {
+
+            min-height: 200px;
+
+            border-radius: 18px;
+
+            border:
+                1px dashed rgba(100,216,255,0.35);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #7f94ad;
+
+            background:
+
+                rgba(255,255,255,0.02);
+        }
+
+
+
+        /* =========================
+           VOLTAR
+        ========================= */
+
+        .voltar {
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            border-radius: 12px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #64d8ff,
+                    #9b7cff
+                );
+
+            color: #020617;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(100,216,255,0.25);
+        }
+
+
+        footer {
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            color: #71839b;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 18px 20px;
+            }
+
+
+            .moon {
+
+                width: 260px;
+
+                height: 260px;
+            }
+
+        }
+/* =========================
+   DIÁRIO DO DETETIVE
+========================= */
+
+.diario {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #030712,
+            #071426
+        );
+}
+
+
+.diario-form {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(17,36,61,0.95),
+            rgba(8,20,36,0.95)
+        );
+
+    border:
+        1px solid rgba(100,216,255,0.15);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+}
+
+
+.form-group {
+
+    margin-bottom: 25px;
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #dce8f5;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    background: #071426;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #64d8ff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(100,216,255,0.08);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #657991;
+}
+
+
+.registro-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #64d8ff,
+            #9b7cff
+        );
+
+    color: #020617;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.registro-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(100,216,255,0.25);
+}
+
+
+.mensagem {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #64d8ff;
+
+    font-weight: bold;
+}
+
+
+@media (max-width: 700px) {
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .diario-form {
+
+        padding: 22px;
+
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+
+            🌌 Além das <span>Estrelas</span>
+
+        </div>
+
+
+        <a href="../index.html">
+
+            ← Voltar para as missões
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="mission-hero">
+
+        <div class="moon"></div>
+
+
+        <div class="hero-content">
+
+            <div class="mission-number">
+
+                🔎 MISSÃO 01
+
+            </div>
+
+
+            <h1>
+
+                🌙 O Mistério da Lua
+
+            </h1>
+
+
+            <p class="hero-subtitle">
+
+                Nossa primeira investigação:
+                descobrir por que a Lua parece mudar
+                de forma durante o mês.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OBJETIVO
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>🎯 Objetivo da missão</h2>
+
+                <p>
+
+                    Investigar as fases da Lua por meio
+                    de observações realizadas pelos
+                    estudantes e comparar os registros
+                    com informações astronômicas.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <div class="icon">
+
+                        🔭
+
+                    </div>
+
+                    <h3>
+
+                        Observar
+
+                    </h3>
+
+                    <p>
+
+                        Observar a Lua em diferentes
+                        dias e horários.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+
+                        📱
+
+                    </div>
+
+                    <h3>
+
+                        Investigar
+
+                    </h3>
+
+                    <p>
+
+                        Utilizar o Stellarium para
+                        confirmar as observações.
+
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+
+                        📸
+
+                    </div>
+
+                    <h3>
+
+                        Registrar
+
+                    </h3>
+
+                    <p>
+
+                        Produzir fotografias, desenhos
+                        e registros das observações.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DESAFIO
+    ========================= -->
+
+    <section class="desafio">
+
+        <div class="container">
+
+            <div class="challenge">
+
+                <h2>
+
+                    🔎 O desafio dos Detetives
+
+                </h2>
+
+
+                <br>
+
+
+                <p>
+
+                    Durante os próximos dias, observe a Lua
+                    sempre que possível.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    <strong>Investigue:</strong>
+
+                </p>
+
+
+                <br>
+
+
+                <ul class="checklist">
+
+                    <li>
+                        Qual era a aparência da Lua?
+                    </li>
+
+                    <li>
+                        Em que horário você observou?
+                    </li>
+
+                    <li>
+                        Em qual direção estava a Lua?
+                    </li>
+
+                    <li>
+                        A Lua estava próxima do horizonte?
+                    </li>
+
+                    <li>
+                        Qual era a fase?
+                    </li>
+
+                    <li>
+                        O Stellarium confirmou sua observação?
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         REGISTROS
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+
+                    📸 Evidências da investigação
+
+                </h2>
+
+
+                <p>
+
+                    Este espaço será preenchido pelos
+                    estudantes durante o semestre.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid">
+
+
+                <div class="registro">
+
+                    🌙<br>
+                    Fotografia da Lua<br>
+                    <br>
+                    Aluno: __________________
+
+                </div>
+
+
+                <div class="registro">
+
+                    🗺️<br>
+                    Captura do Stellarium<br>
+                    <br>
+                    Aluno: __________________
+
+                </div>
+
+
+                <div class="registro">
+
+                    📝<br>
+                    Diário de observação<br>
+                    <br>
+                    Aluno: __________________
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     DIÁRIO DO DETETIVE
+========================= -->
+
+<section class="diario">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="mission-number">
+
+                📡 REGISTRO DE CAMPO
+
+            </div>
+            <!-- REGISTROS SALVOS -->
+
+<div class="registros-salvos">
+
+    <h3>
+        📡 Investigações registradas
+    </h3>
+
+    <div id="lista-registros">
+
+        <p class="sem-registros">
+            Nenhuma investigação foi registrada ainda.
+        </p>
+
+    </div>
+
+</div>
+
+            <h2>
+
+                🕵️ Diário do Detetive
+
+            </h2>
+
+            <p>
+
+                Todo bom detetive precisa registrar suas
+                evidências. Preencha esta ficha sempre que
+                realizar uma observação do céu.
+
+            </p>
+
+        </div>
+
+
+        <div class="diario-form">
+
+
+            <!-- IDENTIFICAÇÃO -->
+
+            <div class="form-group">
+
+                <label for="nome">
+
+                    👤 Nome do investigador
+
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome">
+
+            </div>
+
+
+            <!-- DATA E HORÁRIO -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="data">
+
+                        📅 Data da observação
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="horario">
+
+                        🕐 Horário
+
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario">
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCAL -->
+
+            <div class="form-group">
+
+                <label for="local">
+
+                    📍 Local da observação
+
+                </label>
+
+                <input
+                    type="text"
+                    id="local"
+                    placeholder="Ex.: quintal de casa">
+
+            </div>
+
+
+            <!-- APARÊNCIA -->
+
+            <div class="form-group">
+
+                <label for="aparencia">
+
+                    🌙 Como estava a Lua?
+
+                </label>
+
+                <select id="aparencia">
+
+                    <option value="">
+
+                        Selecione uma opção
+
+                    </option>
+
+                    <option>
+
+                        Lua Nova
+
+                    </option>
+
+                    <option>
+
+                        Lua Crescente
+
+                    </option>
+
+                    <option>
+
+                        Quarto Crescente
+
+                    </option>
+
+                    <option>
+
+                        Lua Cheia
+
+                    </option>
+
+                    <option>
+
+                        Quarto Minguante
+
+                    </option>
+
+                    <option>
+
+                        Não consegui identificar
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DIREÇÃO -->
+
+            <div class="form-group">
+
+                <label for="direcao">
+
+                    🧭 Em qual direção estava a Lua?
+
+                </label>
+
+                <select id="direcao">
+
+                    <option value="">
+
+                        Selecione uma direção
+
+                    </option>
+
+                    <option>
+
+                        Norte
+
+                    </option>
+
+                    <option>
+
+                        Sul
+
+                    </option>
+
+                    <option>
+
+                        Leste
+
+                    </option>
+
+                    <option>
+
+                        Oeste
+
+                    </option>
+
+                    <option>
+
+                        Não consegui identificar
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STELLARIUM -->
+
+            <div class="form-group">
+
+                <label for="stellarium">
+
+                    📱 O que o Stellarium mostrou?
+
+                </label>
+
+                <textarea
+                    id="stellarium"
+                    rows="5"
+                    placeholder="Descreva o que você observou no aplicativo.">
+                </textarea>
+
+            </div>
+
+
+            <!-- OBSERVAÇÃO -->
+
+            <div class="form-group">
+
+                <label for="observacao">
+
+                    🔭 Descreva sua observação
+
+                </label>
+
+                <textarea
+                    id="observacao"
+                    rows="6"
+                    placeholder="O que você percebeu durante a observação?">
+                </textarea>
+
+            </div>
+
+
+            <!-- HIPÓTESE -->
+
+            <div class="form-group">
+
+                <label for="hipotese">
+
+                    🧠 Minha hipótese
+
+                </label>
+
+                <textarea
+                    id="hipotese"
+                    rows="5"
+                    placeholder="O que você acha que está acontecendo?">
+                </textarea>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="button"
+                class="registro-button"
+                onclick="registrarObservacao()">
+
+                🔎 Registrar investigação
+
+            </button>
+
+
+            <!-- MENSAGEM -->
+
+            <div
+                id="mensagem"
+                class="mensagem">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================
+         DESCOBERTAS
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+
+                    🧠 O que descobrimos?
+
+                </h2>
+
+
+                <p>
+
+                    Aqui será publicada a conclusão
+                    construída pelos estudantes.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>
+
+                    Esta área será preenchida após
+                    a investigação.
+
+                    <br><br>
+
+                    Os estudantes deverão explicar,
+                    com suas próprias palavras,
+                    o que descobriram sobre as fases
+                    da Lua e por que elas acontecem.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FONTES
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+
+                    📰 Fontes consultadas
+
+                </h2>
+
+
+                <p>
+
+                    Toda investigação científica precisa
+                    apresentar as fontes utilizadas.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>
+
+                    🔗 Fonte 01 — ______________________
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    🔗 Fonte 02 — ______________________
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    🔗 Fonte 03 — ______________________
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STATUS
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="card">
+
+                <div class="icon">
+
+                    🏆
+
+                </div>
+
+
+                <h3>
+
+                    Status da missão
+
+                </h3>
+
+
+                <p>
+
+                    🔵 MISSÃO EM INVESTIGAÇÃO
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         VOLTAR
+    ========================= -->
+
+    <section class="voltar">
+
+        <a
+            href="../index.html"
+            class="button">
+
+            ← Voltar para a Central de Missões
+
+        </a>
+
+    </section>
+
+
+
+    <footer>
+
+        🌌 Além das Estrelas: Detetives do Universo
+
+        <br><br>
+
+        Missão 01 — O Mistério da Lua
+
+    </footer>
+
+
+</body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+
+    /* =====================================
+       CONEXÃO COM O SUPABASE
+    ===================================== */
+
+    const SUPABASE_URL =
+        "https://sforuydaippyuwmoxsts.supabase.co";
+
+    const SUPABASE_KEY =
+        "sb_publishable_do1h8_r1y9z5IhpeKvciyg_Qci5TRhs";
+
+    const supabaseClient =
+        supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+
+    /* =====================================
+       REGISTRAR OBSERVAÇÃO
+    ===================================== */
+
+    async function registrarObservacao() {
+
+        const nome =
+            document.getElementById("nome").value;
+
+        const data =
+            document.getElementById("data").value;
+
+        const horario =
+            document.getElementById("horario").value;
+
+        const local =
+            document.getElementById("local").value;
+
+        const aparencia =
+            document.getElementById("aparencia").value;
+
+        const direcao =
+            document.getElementById("direcao").value;
+
+        const stellarium =
+            document.getElementById("stellarium").value;
+
+        const observacao =
+            document.getElementById("observacao").value;
+
+        const hipotese =
+            document.getElementById("hipotese").value;
+
+        const mensagem =
+            document.getElementById("mensagem");
+
+
+        /* VALIDAÇÃO */
+
+        if (nome.trim() === "") {
+
+            mensagem.innerHTML =
+                "⚠️ Detetive, informe seu nome antes de registrar.";
+
+            return;
+
+        }
+
+
+        /* MENSAGEM DURANTE O ENVIO */
+
+        mensagem.innerHTML =
+            "📡 Enviando investigação para a Central...";
+
+
+        /* ENVIA PARA O SUPABASE */
+
+        const { error } = await supabaseClient
+
+            .from("observacoes_lua")
+
+            .insert([
+
+                {
+
+                    nome: nome,
+
+                    data_observacao: data || null,
+
+                    horario: horario || null,
+
+                    local: local || null,
+
+                    aparencia: aparencia || null,
+
+                    direcao: direcao || null,
+
+                    stellarium: stellarium || null,
+
+                    observacao: observacao || null,
+
+                    hipotese: hipotese || null
+
+                }
+
+            ]);
+
+
+        /* VERIFICA SE OCORREU ALGUM ERRO */
+
+        if (error) {
+
+            console.error(error);
+
+            mensagem.innerHTML =
+                "❌ Erro " + error.message;
+
+            return;
+
+        }
+
+
+        /* SUCESSO */
+
+        mensagem.innerHTML =
+            "🚀 Investigação enviada com sucesso para a Central, Detetive " +
+            nome +
+            "!";
+
+
+        /* LIMPA O FORMULÁRIO */
+
+        document.getElementById("nome").value = "";
+
+        document.getElementById("data").value = "";
+
+        document.getElementById("horario").value = "";
+
+        document.getElementById("local").value = "";
+
+        document.getElementById("aparencia").value = "";
+
+        document.getElementById("direcao").value = "";
+
+        document.getElementById("stellarium").value = "";
+
+        document.getElementById("observacao").value = "";
+
+        document.getElementById("hipotese").value = "";
+
+    }
+
+</script>
+
+
+
+</html>
