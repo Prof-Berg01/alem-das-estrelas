@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>
+
+        Missão 03 — Constelações
+
+    </title>
+
+
+    <style>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO GERAL
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at top,
+                    #152642,
+                    #030814 75%
+                );
+
+            color: white;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+        ====================================================== */
+
+        header {
+
+            padding: 22px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom:
+
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        .logo {
+
+            color: #64d8ff;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        .voltar {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.4);
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .voltar:hover {
+
+            background:
+
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            text-align: center;
+
+            padding: 70px 20px 45px;
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .hero .numero {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background:
+
+                rgba(100, 216, 255, 0.1);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.3);
+
+            color: #64d8ff;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 42px;
+
+            color: #64d8ff;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero p {
+
+            color: #c5d1df;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =====================================================
+           CARTÕES
+        ====================================================== */
+
+        .card {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(15, 36, 60, 0.95),
+                    rgba(5, 16, 30, 0.95)
+                );
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.18);
+
+            border-radius: 20px;
+
+            padding: 32px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .card h2 {
+
+            color: #64d8ff;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .card p {
+
+            color: #d2dce8;
+
+            line-height: 1.7;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =====================================================
+           PASSOS DA MISSÃO
+        ====================================================== */
+
+        .passos {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .passo {
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .passo span {
+
+            font-size: 28px;
+
+        }
+
+
+        .passo h3 {
+
+            color: #64d8ff;
+
+            margin: 12px 0;
+
+        }
+
+
+        .passo p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* =====================================================
+           LISTA DE CONSTELAÇÕES
+        ====================================================== */
+
+        .constelacoes-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .constelacao {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .constelacao h3 {
+
+            color: #ffffff;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .constelacao p {
+
+            color: #b8c7d9;
+
+            font-size: 15px;
+
+            margin-bottom: 0;
+
+        }
+
+
+        /* =====================================================
+           FORMULÁRIO
+        ====================================================== */
+
+        form {
+
+            margin-top: 15px;
+
+        }
+
+
+        .campo {
+
+            margin-bottom: 22px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #d9e7f4;
+
+            font-weight: bold;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.25);
+
+            background:
+
+                rgba(255, 255, 255, 0.06);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+
+        select option {
+
+            background: #071423;
+
+            color: white;
+
+        }
+
+
+        textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+
+            line-height: 1.6;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #64d8ff;
+
+        }
+
+
+        .radio-grupo {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .radio-opcao {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+        }
+
+
+        .radio-opcao input {
+
+            width: auto;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ====================================================== */
+
+        .botao-enviar {
+
+            width: 100%;
+
+            padding: 17px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #64d8ff;
+
+            color: #06111f;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .botao-enviar:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+
+        }
+
+
+        .botao-enviar:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =====================================================
+           MENSAGEM
+        ====================================================== */
+
+        #mensagem {
+
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           DESTAQUE
+        ====================================================== */
+
+        .destaque {
+
+            border-left:
+
+                4px solid #64d8ff;
+
+            padding: 20px;
+
+            background:
+
+                rgba(100, 216, 255, 0.06);
+
+            border-radius: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 18px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .passos,
+            .constelacoes-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .card {
+
+                padding: 24px;
+
+            }
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header>
+
+
+        <div class="logo">
+
+            🌌 Além das Estrelas
+
+        </div>
+
+
+        <a
+            href="../index.html"
+            class="voltar"
+        >
+
+            ← Voltar ao início
+
+        </a>
+
+
+    </header>
+
+
+    <!-- =====================================================
+         APRESENTAÇÃO DA MISSÃO
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <div class="numero">
+
+            ⭐ MISSÃO 03
+
+        </div>
+
+
+        <h1>
+
+            Caçadores de Constelações
+
+        </h1>
+
+
+        <p>
+
+            O céu noturno parece estar cheio de estrelas
+            espalhadas aleatoriamente. Mas, quando observamos
+            com atenção, podemos perceber padrões e desenhos
+            formados por grupos de estrelas.
+
+        </p>
+
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- =================================================
+             O DESAFIO
+        ================================================== -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🎯 O Desafio
+
+            </h2>
+
+
+            <p>
+
+                Nesta missão, você será um verdadeiro
+                Caçador de Constelações. Sua tarefa será
+                observar o céu, identificar uma constelação
+                e reunir pistas que comprovem sua descoberta.
+
+            </p>
+
+
+            <div class="destaque">
+
+                <p>
+
+                    🔎 <strong>Missão:</strong>
+
+                    Encontre uma constelação no céu ou
+                    utilizando o Stellarium, registre as
+                    características que ajudaram na sua
+                    identificação e envie sua descoberta
+                    para a Central dos Detetives.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             COMO REALIZAR A MISSÃO
+        ================================================== -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🧭 Como realizar a investigação?
+
+            </h2>
+
+
+            <div class="passos">
+
+
+                <div class="passo">
+
+                    <span>🌌</span>
+
+                    <h3>
+
+                        1. Observe
+
+                    </h3>
+
+                    <p>
+
+                        Observe o céu em um local seguro
+                        e tente identificar grupos de estrelas
+                        que formam padrões.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>🔭</span>
+
+                    <h3>
+
+                        2. Investigue
+
+                    </h3>
+
+                    <p>
+
+                        Utilize o Stellarium, se necessário,
+                        para comparar o céu observado com
+                        o mapa celeste.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>📡</span>
+
+                    <h3>
+
+                        3. Registre
+
+                    </h3>
+
+                    <p>
+
+                        Anote suas pistas e envie a descoberta
+                        para o Diário do Céu Coletivo.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             EXEMPLOS DE CONSTELAÇÕES
+        ================================================== -->
+
+        <section class="card">
+
+
+            <h2>
+
+                ⭐ Algumas constelações que você pode investigar
+
+            </h2>
+
+
+            <div class="constelacoes-grid">
+
+
+                <div class="constelacao">
+
+                    <h3>
+
+                        ⭐ Cruzeiro do Sul
+
+                    </h3>
+
+                    <p>
+
+                        Um dos padrões mais conhecidos do céu
+                        do hemisfério sul.
+
+                    </p>
+
+                </div>
+
+
+                <div class="constelacao">
+
+                    <h3>
+
+                        ⭐ Órion
+
+                    </h3>
+
+                    <p>
+
+                        Conhecida por três estrelas alinhadas
+                        que formam o famoso cinturão.
+
+                    </p>
+
+                </div>
+
+
+                <div class="constelacao">
+
+                    <h3>
+
+                        ⭐ Escorpião
+
+                    </h3>
+
+                    <p>
+
+                        Uma grande constelação com formato
+                        que lembra a cauda de um escorpião.
+
+                    </p>
+
+                </div>
+
+
+                <div class="constelacao">
+
+                    <h3>
+
+                        ⭐ Cão Maior
+
+                    </h3>
+
+                    <p>
+
+                        Região do céu onde se encontra Sírius,
+                        uma das estrelas mais brilhantes
+                        observadas da Terra.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <section class="card">
+
+
+            <h2>
+
+                📡 Envie sua descoberta
+
+            </h2>
+
+
+            <p>
+
+                Preencha cuidadosamente os dados da sua
+                investigação antes de enviar para a Central.
+
+            </p>
+
+
+            <form id="formulario-constelacoes">
+
+
+                <!-- NOME -->
+
+                <div class="campo">
+
+
+                    <label for="nome">
+
+                        🕵️ Nome do Detetive
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="nome"
+                        required
+                        placeholder="Digite seu nome"
+                    >
+
+
+                </div>
+
+
+                <!-- CONSTELAÇÃO -->
+
+                <div class="campo">
+
+
+                    <label for="constelacao">
+
+                        ⭐ Constelação identificada
+
+                    </label>
+
+
+                    <select
+    id="constelacao"
+    required
+>
+
+    <option value="">
+
+        Selecione uma constelação
+
+    </option>
+
+
+    <option value="Cruzeiro do Sul">
+
+        Cruzeiro do Sul
+
+    </option>
+
+
+    <option value="Órion">
+
+        Órion
+
+    </option>
+
+
+    <option value="Escorpião">
+
+        Escorpião
+
+    </option>
+
+
+    <option value="Cão Maior">
+
+        Cão Maior
+
+    </option>
+
+
+    <option value="Cão Menor">
+
+        Cão Menor
+
+    </option>
+
+
+    <option value="Touro">
+
+        Touro
+
+    </option>
+
+
+    <option value="Gêmeos">
+
+        Gêmeos
+
+    </option>
+
+
+    <option value="Leão">
+
+        Leão
+
+    </option>
+
+
+    <option value="Sagitário">
+
+        Sagitário
+
+    </option>
+
+
+    <option value="Centauro">
+
+        Centauro
+
+    </option>
+
+
+    <option value="Carina">
+
+        Carina
+
+    </option>
+
+
+    <option value="Vela">
+
+        Vela
+
+    </option>
+
+
+    <option value="Outra">
+
+        Outra constelação
+
+    </option>
+
+</select>
+
+
+                </div>
+
+
+                <!-- DATA -->
+
+                <div class="campo">
+
+
+                    <label for="data">
+
+                        📅 Data da observação
+
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="data"
+                        required
+                    >
+
+
+                </div>
+
+
+                <!-- HORÁRIO -->
+
+                <div class="campo">
+
+
+                    <label for="horario">
+
+                        🕐 Horário aproximado
+
+                    </label>
+
+
+                    <input
+                        type="time"
+                        id="horario"
+                        required
+                    >
+
+
+                </div>
+
+
+                <!-- DIREÇÃO -->
+
+                <div class="campo">
+
+
+                    <label for="direcao">
+
+                        🧭 Em que região do céu você observou?
+
+                    </label>
+
+
+                    <select
+                        id="direcao"
+                        required
+                    >
+
+                        <option value="">
+
+                            Selecione uma opção
+
+                        </option>
+
+
+                        <option>
+
+                            Norte
+
+                        </option>
+
+
+                        <option>
+
+                            Sul
+
+                        </option>
+
+
+                        <option>
+
+                            Leste
+
+                        </option>
+
+
+                        <option>
+
+                            Oeste
+
+                        </option>
+
+
+                        <option>
+
+                            Próximo ao zênite
+
+                        </option>
+
+
+                        <option>
+
+                            Não consegui identificar
+
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+                <!-- OLHO NU -->
+
+                <div class="campo">
+
+
+                    <label>
+
+                        👁️ Foi possível observar a olho nu?
+
+                    </label>
+
+
+                    <div class="radio-grupo">
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="olho_nu"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="olho_nu"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- STELLARIUM -->
+
+                <div class="campo">
+
+
+                    <label>
+
+                        🔭 Você utilizou o Stellarium?
+
+                    </label>
+
+
+                    <div class="radio-grupo">
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="stellarium"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="stellarium"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- CARACTERÍSTICAS -->
+
+                <div class="campo">
+
+
+                    <label for="caracteristicas">
+
+                        🧩 Quais pistas ajudaram você a identificar a constelação?
+
+                    </label>
+
+
+                    <textarea
+                        id="caracteristicas"
+                        required
+                        placeholder="Descreva o desenho, as estrelas mais brilhantes, alinhamentos ou outras pistas que ajudaram na identificação..."
+                    ></textarea>
+
+
+                </div>
+
+
+                <!-- OBSERVAÇÃO -->
+
+                <div class="campo">
+
+
+                    <label for="observacao">
+
+                        🔎 Registro da investigação
+
+                    </label>
+
+
+                    <textarea
+                        id="observacao"
+                        required
+                        placeholder="Conte como foi sua investigação e o que você descobriu..."
+                    ></textarea>
+
+
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="botao-enviar"
+                    id="botao-enviar"
+                >
+
+                    🚀 Enviar descoberta para a Central
+
+                </button>
+
+
+            </form>
+
+
+            <div id="mensagem"></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO DO SUPABASE
+        ====================================================== */
+
+        const SUPABASE_URL =
+            "https://sforuydaippyuwmoxsts.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_do1h8_r1y9z5IhpeKvciyg_Qci5TRhs";
+
+
+        /* =====================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const formulario =
+            document.getElementById(
+                "formulario-constelacoes"
+            );
+
+
+        const mensagem =
+            document.getElementById(
+                "mensagem"
+            );
+
+
+        const botaoEnviar =
+            document.getElementById(
+                "botao-enviar"
+            );
+
+
+        /* =====================================================
+           ENVIO DO FORMULÁRIO
+        ====================================================== */
+
+        formulario.addEventListener(
+
+            "submit",
+
+            async function(evento) {
+
+
+                evento.preventDefault();
+
+
+                const nomeAluno =
+                    document.getElementById(
+                        "nome"
+                    ).value.trim();
+
+
+                const constelacao =
+                    document.getElementById(
+                        "constelacao"
+                    ).value;
+
+
+                const dataObservacao =
+                    document.getElementById(
+                        "data"
+                    ).value;
+
+
+                const horario =
+                    document.getElementById(
+                        "horario"
+                    ).value;
+
+
+                const direcao =
+                    document.getElementById(
+                        "direcao"
+                    ).value;
+
+
+                const olhoNu =
+                    document.querySelector(
+
+                        'input[name="olho_nu"]:checked'
+
+                    ).value;
+
+
+                const stellarium =
+                    document.querySelector(
+
+                        'input[name="stellarium"]:checked'
+
+                    ).value;
+
+
+                const caracteristicas =
+                    document.getElementById(
+                        "caracteristicas"
+                    ).value.trim();
+
+
+                const observacao =
+                    document.getElementById(
+                        "observacao"
+                    ).value.trim();
+
+
+                /* =============================================
+                   DESABILITAR BOTÃO
+                ============================================== */
+
+                botaoEnviar.disabled =
+                    true;
+
+
+                botaoEnviar.textContent =
+                    "📡 Enviando descoberta...";
+
+
+                mensagem.textContent =
+                    "";
+
+
+                /* =============================================
+                   DADOS
+                ============================================== */
+
+                const dados = {
+
+
+                    nome_aluno:
+
+                        nomeAluno,
+
+
+                    constelacao:
+
+                        constelacao,
+
+
+                    data_observacao:
+
+                        dataObservacao,
+
+
+                    horario:
+
+                        horario,
+
+
+                    direcao:
+
+                        direcao,
+
+
+                    olho_nu:
+
+                        olhoNu,
+
+
+                    stellarium:
+
+                        stellarium,
+
+
+                    caracteristicas:
+
+                        caracteristicas,
+
+
+                    observacao:
+
+                        observacao
+
+                };
+
+
+                /* =============================================
+                   ENVIO AO SUPABASE
+                ============================================== */
+
+                try {
+
+
+                    const resposta =
+                        await fetch(
+
+                            `${SUPABASE_URL}/rest/v1/observacoes_constelacoes`,
+
+                            {
+
+                                method:
+
+                                    "POST",
+
+
+                                headers: {
+
+                                    "Content-Type":
+
+                                        "application/json",
+
+
+                                    "apikey":
+
+                                        SUPABASE_KEY,
+
+
+                                    "Authorization":
+
+                                        `Bearer ${SUPABASE_KEY}`,
+
+
+                                    "Prefer":
+
+                                        "return=minimal"
+
+                                },
+
+
+                                body:
+
+                                    JSON.stringify(
+                                        dados
+                                    )
+
+                            }
+
+                        );
+
+
+                    if (
+                        !resposta.ok
+                    ) {
+
+
+                        const erro =
+                            await resposta.text();
+
+
+                        throw new Error(
+                            erro
+                        );
+
+                    }
+
+
+                    mensagem.textContent =
+
+                        "✅ Descoberta enviada com sucesso para a Central dos Detetives!";
+
+
+                    formulario.reset();
+
+
+                }
+
+
+                catch (erro) {
+
+
+                    console.error(
+                        erro
+                    );
+
+
+                    mensagem.textContent =
+
+                        "❌ Não foi possível enviar sua descoberta. Verifique sua conexão e tente novamente.";
+
+                }
+
+
+                finally {
+
+
+                    botaoEnviar.disabled =
+                        false;
+
+
+                    botaoEnviar.textContent =
+
+                        "🚀 Enviar descoberta para a Central";
+
+                }
+
+
+            }
+
+        );
+
+
+    </script>
+
+
+</body>
+
+
+</html>
