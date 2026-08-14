@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>
+
+        Missão 04 — Detetives da Atmosfera
+
+    </title>
+
+
+    <style>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO GERAL
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at top,
+                    #152642,
+                    #030814 75%
+                );
+
+            color: white;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+        ====================================================== */
+
+        header {
+
+            padding: 22px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom:
+
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        .logo {
+
+            color: #64d8ff;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        .voltar {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.4);
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .voltar:hover {
+
+            background:
+
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            text-align: center;
+
+            padding: 70px 20px 45px;
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .hero .numero {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background:
+
+                rgba(100, 216, 255, 0.1);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.3);
+
+            color: #64d8ff;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 42px;
+
+            color: #64d8ff;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero p {
+
+            color: #c5d1df;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =====================================================
+           CARTÕES
+        ====================================================== */
+
+        .card {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(15, 36, 60, 0.95),
+                    rgba(5, 16, 30, 0.95)
+                );
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.18);
+
+            border-radius: 20px;
+
+            padding: 32px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .card h2 {
+
+            color: #64d8ff;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .card p {
+
+            color: #d2dce8;
+
+            line-height: 1.7;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =====================================================
+           PASSOS
+        ====================================================== */
+
+        .passos {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .passo {
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .passo span {
+
+            font-size: 28px;
+
+        }
+
+
+        .passo h3 {
+
+            color: #64d8ff;
+
+            margin: 12px 0;
+
+        }
+
+
+        .passo p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* =====================================================
+           FENÔMENOS
+        ====================================================== */
+
+        .fenomenos-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .fenomeno {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .fenomeno h3 {
+
+            color: white;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .fenomeno p {
+
+            color: #b8c7d9;
+
+            font-size: 15px;
+
+            margin-bottom: 0;
+
+        }
+
+
+        /* =====================================================
+           FORMULÁRIO
+        ====================================================== */
+
+        form {
+
+            margin-top: 15px;
+
+        }
+
+
+        .campo {
+
+            margin-bottom: 22px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #d9e7f4;
+
+            font-weight: bold;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.25);
+
+            background:
+
+                rgba(255, 255, 255, 0.06);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+
+        select option {
+
+            background: #071423;
+
+            color: white;
+
+        }
+
+
+        textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+
+            line-height: 1.6;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #64d8ff;
+
+        }
+
+
+        .radio-grupo {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .radio-opcao {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+            font-weight: normal;
+
+        }
+
+
+        .radio-opcao input {
+
+            width: auto;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ====================================================== */
+
+        .botao-enviar {
+
+            width: 100%;
+
+            padding: 17px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #64d8ff;
+
+            color: #06111f;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .botao-enviar:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+
+        }
+
+
+        .botao-enviar:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =====================================================
+           MENSAGEM
+        ====================================================== */
+
+        #mensagem {
+
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           DESTAQUE
+        ====================================================== */
+
+        .destaque {
+
+            border-left:
+
+                4px solid #64d8ff;
+
+            padding: 20px;
+
+            background:
+
+                rgba(100, 216, 255, 0.06);
+
+            border-radius: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 18px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .passos,
+            .fenomenos-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .card {
+
+                padding: 24px;
+
+            }
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+
+        <div class="logo">
+
+            🌌 Além das Estrelas
+
+        </div>
+
+
+        <a
+            href="../index.html"
+            class="voltar"
+        >
+
+            ← Voltar ao início
+
+        </a>
+
+
+    </header>
+
+
+    <section class="hero">
+
+
+        <div class="numero">
+
+            ☁️ MISSÃO 04
+
+        </div>
+
+
+        <h1>
+
+            Detetives da Atmosfera
+
+        </h1>
+
+
+        <p>
+
+            O céu está sempre mudando. Nuvens, ventos, chuva,
+            arco-íris e outros fenômenos deixam pistas sobre o
+            que está acontecendo na atmosfera. Nesta missão,
+            você será responsável por investigar essas evidências.
+
+        </p>
+
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- O DESAFIO -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🎯 O Desafio
+
+            </h2>
+
+
+            <p>
+
+                Observe o céu com atenção e se transforme em um
+                verdadeiro Detetive da Atmosfera. Sua missão será
+                identificar as condições atmosféricas, procurar
+                fenômenos e registrar as pistas encontradas.
+
+            </p>
+
+
+            <div class="destaque">
+
+                <p>
+
+                    🔎 <strong>Missão:</strong>
+                    Observe o estado do céu, identifique um fenômeno
+                    atmosférico, perceba a temperatura e o vento e
+                    envie sua descoberta para a Central dos Detetives.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- COMO INVESTIGAR -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🧭 Como realizar a investigação?
+
+            </h2>
+
+
+            <div class="passos">
+
+
+                <div class="passo">
+
+                    <span>👀</span>
+
+                    <h3>
+
+                        1. Observe
+
+                    </h3>
+
+                    <p>
+
+                        Observe o céu e procure pistas como nuvens,
+                        chuva, vento, mudança de luminosidade ou
+                        outros sinais da atmosfera.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>🧩</span>
+
+                    <h3>
+
+                        2. Investigue
+
+                    </h3>
+
+                    <p>
+
+                        Analise as pistas e tente identificar qual
+                        fenômeno atmosférico está acontecendo.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>📡</span>
+
+                    <h3>
+
+                        3. Registre
+
+                    </h3>
+
+                    <p>
+
+                        Registre sua descoberta e envie os dados
+                        para a Central dos Detetives.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FENÔMENOS -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🌦️ Fenômenos que você pode investigar
+
+            </h2>
+
+
+            <div class="fenomenos-grid">
+
+
+                <div class="fenomeno">
+
+                    <h3>☁️ Formação de nuvens</h3>
+
+                    <p>
+
+                        Observe a quantidade, aparência e mudança
+                        das nuvens.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fenomeno">
+
+                    <h3>🌧️ Chuva</h3>
+
+                    <p>
+
+                        Procure pistas como nuvens escuras e
+                        precipitação.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fenomeno">
+
+                    <h3>🌈 Arco-íris</h3>
+
+                    <p>
+
+                        Investigue a presença do Sol e de gotas
+                        de água no ar.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fenomeno">
+
+                    <h3>⚡ Raios e relâmpagos</h3>
+
+                    <p>
+
+                        Observe com segurança sinais de tempestade,
+                        clarões e trovões.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fenomeno">
+
+                    <h3>🌫️ Neblina</h3>
+
+                    <p>
+
+                        Observe a redução da visibilidade causada
+                        por gotículas próximas ao solo.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fenomeno">
+
+                    <h3>💨 Ventos</h3>
+
+                    <p>
+
+                        Procure evidências no movimento de folhas,
+                        árvores, bandeiras e outros objetos.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+
+        <section class="card">
+
+
+            <h2>
+
+                📡 Envie sua descoberta
+
+            </h2>
+
+
+            <p>
+
+                Preencha cuidadosamente os dados da sua investigação.
+
+            </p>
+
+
+            <form id="formulario-atmosfera">
+
+
+                <div class="campo">
+
+                    <label for="nome">
+
+                        🕵️ Nome do Detetive
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        required
+                        placeholder="Digite seu nome"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="data">
+
+                        📅 Data da observação
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="horario">
+
+                        🕐 Horário aproximado
+
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="local">
+
+                        📍 Onde realizou a observação?
+
+                    </label>
+
+                    <select id="local" required>
+
+                        <option value="">
+
+                            Selecione uma opção
+
+                        </option>
+
+                        <option value="Casa">
+
+                            Casa
+
+                        </option>
+
+                        <option value="Escola">
+
+                            Escola
+
+                        </option>
+
+                        <option value="Outro local">
+
+                            Outro local
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="estado_ceu">
+
+                        ☁️ Como estava o céu?
+
+                    </label>
+
+                    <select id="estado_ceu" required>
+
+                        <option value="">
+
+                            Selecione uma opção
+
+                        </option>
+
+                        <option value="Céu limpo">
+
+                            ☀️ Céu limpo
+
+                        </option>
+
+                        <option value="Poucas nuvens">
+
+                            🌤️ Poucas nuvens
+
+                        </option>
+
+                        <option value="Parcialmente nublado">
+
+                            ⛅ Parcialmente nublado
+
+                        </option>
+
+                        <option value="Muito nublado">
+
+                            ☁️ Muito nublado
+
+                        </option>
+
+                        <option value="Chuvoso">
+
+                            🌧️ Chuvoso
+
+                        </option>
+
+                        <option value="Tempestade">
+
+                            ⛈️ Tempestade
+
+                        </option>
+
+                        <option value="Neblina">
+
+                            🌫️ Neblina
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="fenomeno">
+
+                        🔍 Qual fenômeno você observou?
+
+                    </label>
+
+                    <select id="fenomeno" required>
+
+                        <option value="">
+
+                            Selecione uma opção
+
+                        </option>
+
+                        <option value="Formação de nuvens">
+
+                            ☁️ Formação de nuvens
+
+                        </option>
+
+                        <option value="Chuva">
+
+                            🌧️ Chuva
+
+                        </option>
+
+                        <option value="Arco-íris">
+
+                            🌈 Arco-íris
+
+                        </option>
+
+                        <option value="Raios e relâmpagos">
+
+                            ⚡ Raios e relâmpagos
+
+                        </option>
+
+                        <option value="Neblina">
+
+                            🌫️ Neblina
+
+                        </option>
+
+                        <option value="Ventos fortes">
+
+                            💨 Ventos fortes
+
+                        </option>
+
+                        <option value="Halo solar">
+
+                            ☀️ Halo solar
+
+                        </option>
+
+                        <option value="Outro fenômeno">
+
+                            🔎 Outro fenômeno
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+
+                        🌡️ Como estava a temperatura?
+
+                    </label>
+
+
+                    <div class="radio-grupo">
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="sensacao_termica"
+                                value="Muito quente"
+                                required
+                            >
+
+                            🥵 Muito quente
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="sensacao_termica"
+                                value="Agradável"
+                            >
+
+                            😎 Agradável
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="sensacao_termica"
+                                value="Frio"
+                            >
+
+                            🥶 Frio
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+
+                        💨 Como estava o vento?
+
+                    </label>
+
+
+                    <div class="radio-grupo">
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="vento"
+                                value="Sem vento"
+                                required
+                            >
+
+                            Sem vento
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="vento"
+                                value="Fraco"
+                            >
+
+                            🍃 Fraco
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="vento"
+                                value="Moderado"
+                            >
+
+                            💨 Moderado
+
+                        </label>
+
+
+                        <label class="radio-opcao">
+
+                            <input
+                                type="radio"
+                                name="vento"
+                                value="Forte"
+                            >
+
+                            🌪️ Forte
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="evidencias">
+
+                        🧩 Quais pistas ajudaram você a identificar o fenômeno?
+
+                    </label>
+
+                    <textarea
+                        id="evidencias"
+                        required
+                        placeholder="Descreva o que você observou..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="observacao">
+
+                        🔎 Registro da investigação
+
+                    </label>
+
+                    <textarea
+                        id="observacao"
+                        required
+                        placeholder="Conte como foi sua investigação..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-enviar"
+                    id="botao-enviar"
+                >
+
+                    🚀 Enviar descoberta para a Central
+
+                </button>
+
+
+            </form>
+
+
+            <div id="mensagem"></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO DO SUPABASE
+        ====================================================== */
+
+        const SUPABASE_URL =
+            "https://sforuydaippyuwmoxsts.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_do1h8_r1y9z5IhpeKvciyg_Qci5TRhs";
+
+
+        /* =====================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const formulario =
+            document.getElementById(
+                "formulario-atmosfera"
+            );
+
+
+        const mensagem =
+            document.getElementById(
+                "mensagem"
+            );
+
+
+        const botaoEnviar =
+            document.getElementById(
+                "botao-enviar"
+            );
+
+
+        /* =====================================================
+           ENVIO
+        ====================================================== */
+
+        formulario.addEventListener(
+
+            "submit",
+
+            async function(evento) {
+
+
+                evento.preventDefault();
+
+
+                const dados = {
+
+
+                    nome_aluno:
+
+                        document
+                            .getElementById("nome")
+                            .value
+                            .trim(),
+
+
+                    data_observacao:
+
+                        document
+                            .getElementById("data")
+                            .value,
+
+
+                    horario:
+
+                        document
+                            .getElementById("horario")
+                            .value,
+
+
+                    local:
+
+                        document
+                            .getElementById("local")
+                            .value,
+
+
+                    estado_ceu:
+
+                        document
+                            .getElementById("estado_ceu")
+                            .value,
+
+
+                    fenomeno:
+
+                        document
+                            .getElementById("fenomeno")
+                            .value,
+
+
+                    sensacao_termica:
+
+                        document
+                            .querySelector(
+                                'input[name="sensacao_termica"]:checked'
+                            )
+                            .value,
+
+
+                    vento:
+
+                        document
+                            .querySelector(
+                                'input[name="vento"]:checked'
+                            )
+                            .value,
+
+
+                    evidencias:
+
+                        document
+                            .getElementById("evidencias")
+                            .value
+                            .trim(),
+
+
+                    observacao:
+
+                        document
+                            .getElementById("observacao")
+                            .value
+                            .trim()
+
+                };
+
+
+                botaoEnviar.disabled = true;
+
+
+                botaoEnviar.textContent =
+                    "📡 Enviando descoberta...";
+
+
+                mensagem.textContent = "";
+
+
+                try {
+
+
+                    const resposta =
+                        await fetch(
+
+                            `${SUPABASE_URL}/rest/v1/observacoes_atmosfera`,
+
+                            {
+
+                                method: "POST",
+
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+
+                                    "apikey":
+                                        SUPABASE_KEY,
+
+
+                                    "Authorization":
+                                        `Bearer ${SUPABASE_KEY}`,
+
+
+                                    "Prefer":
+                                        "return=minimal"
+
+                                },
+
+
+                                body:
+
+                                    JSON.stringify(dados)
+
+                            }
+
+                        );
+
+
+                    if (!resposta.ok) {
+
+
+                        const erro =
+                            await resposta.text();
+
+
+                        throw new Error(erro);
+
+                    }
+
+
+                    mensagem.textContent =
+                        "✅ Investigação enviada com sucesso para a Central dos Detetives!";
+
+
+                    formulario.reset();
+
+                }
+
+
+                catch (erro) {
+
+
+                    console.error(erro);
+
+
+                    mensagem.textContent =
+                        "❌ Não foi possível enviar sua investigação. Verifique sua conexão e tente novamente.";
+
+                }
+
+
+                finally {
+
+
+                    botaoEnviar.disabled = false;
+
+
+                    botaoEnviar.textContent =
+                        "🚀 Enviar descoberta para a Central";
+
+                }
+
+
+            }
+
+        );
+
+
+    </script>
+
+
+</body>
+
+
+</html>
