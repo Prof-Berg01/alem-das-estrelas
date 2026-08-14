@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Missão 02 | O Mistério dos Planetas Visíveis</title>
+
+
+<style>
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(55, 90, 160, 0.25), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(120, 70, 180, 0.18), transparent 25%),
+        #030712;
+    color: white;
+}
+
+
+/* =====================================================
+   FUNDO ESTRELADO
+===================================================== */
+
+.stars {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size: 80px 80px;
+
+    opacity: 0.18;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    position: relative;
+}
+
+.hero-content {
+
+    max-width: 900px;
+}
+
+.mission-tag {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(250, 204, 21, 0.45);
+
+    color: #facc15;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+
+    font-size: clamp(42px, 8vw, 85px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+
+    color: #facc15;
+}
+
+.hero p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #b8c4d8;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.planet-hero {
+
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 30px 20px 100px;
+}
+
+
+/* =====================================================
+   CARTÕES
+===================================================== */
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 36, 61, 0.94),
+            rgba(6, 15, 30, 0.96)
+        );
+
+    border:
+
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,0.25);
+}
+
+.card-title {
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: #facc15;
+}
+
+.card p {
+
+    color: #b8c4d8;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TRANSMISSÃO DA CENTRAL
+===================================================== */
+
+.central {
+
+    border:
+
+        1px solid rgba(100,216,255,0.25);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8, 35, 60, 0.9),
+            rgba(4, 15, 30, 0.95)
+        );
+}
+
+.central-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #64d8ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.signal {
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #38d996;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 15px #38d996;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.central p {
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   ETAPAS DA INVESTIGAÇÃO
+===================================================== */
+
+.steps {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.step {
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+
+        rgba(255,255,255,0.03);
+
+    border:
+
+        1px solid rgba(255,255,255,0.07);
+
+    transition: 0.3s;
+}
+
+.step:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+
+        rgba(250,204,21,0.35);
+}
+
+.step-number {
+
+    font-size: 12px;
+
+    color: #facc15;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.step-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.step h3 {
+
+    margin-bottom: 10px;
+}
+
+.step p {
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   DOSSIÊ DOS PLANETAS
+===================================================== */
+
+.planet-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 25px;
+}
+
+.planet-card {
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            rgba(18, 36, 60, 0.96),
+            rgba(5, 14, 27, 0.98)
+        );
+
+    border:
+
+        1px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
+}
+
+.planet-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,0.35);
+}
+
+.planet-image {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.planet-info {
+
+    padding: 25px;
+}
+
+.planet-symbol {
+
+    font-size: 30px;
+
+    color: #facc15;
+
+    margin-bottom: 8px;
+}
+
+.planet-info h3 {
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.planet-info p {
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.clue {
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background:
+
+        rgba(250,204,21,0.07);
+
+    border-left:
+
+        3px solid #facc15;
+
+    font-size: 14px;
+}
+
+.clue strong {
+
+    color: #facc15;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+.form-card {
+
+    border:
+
+        1px solid rgba(250,204,21,0.22);
+}
+
+form {
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d9e2f0;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border:
+
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+
+        rgba(0,0,0,0.25);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #facc15;
+
+    box-shadow:
+
+        0 0 0 3px rgba(250,204,21,0.08);
+}
+
+select option {
+
+    background: #0b1322;
+
+    color: white;
+}
+
+textarea {
+
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+button {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #facc15,
+            #f59e0b
+        );
+
+    color: #111827;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(250,204,21,0.2);
+}
+
+
+/* =====================================================
+   MENSAGEM
+===================================================== */
+
+#mensagem {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.sucesso {
+
+    background:
+
+        rgba(22,101,52,0.8);
+
+    border:
+
+        1px solid #38d996;
+}
+
+.erro {
+
+    background:
+
+        rgba(153,27,27,0.8);
+
+    border:
+
+        1px solid #ff6b6b;
+}
+
+
+/* =====================================================
+   VOLTAR
+===================================================== */
+
+.back {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #64d8ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.back:hover {
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height: 65vh;
+
+        padding: 100px 20px 60px;
+    }
+
+    .planet-hero {
+
+        font-size: 70px;
+    }
+
+    .card {
+
+        padding: 25px 20px;
+    }
+
+    .card-title {
+
+        font-size: 25px;
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+    .planet-image {
+
+        height: 220px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="stars"></div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="planet-hero">
+            🪐
+        </div>
+
+        <div class="mission-tag">
+            MISSÃO 02 • CENTRAL DE INVESTIGAÇÃO
+        </div>
+
+        <h1>
+            O Mistério dos<br>
+            <span>Planetas Visíveis</span>
+        </h1>
+
+        <p>
+            Nem todos os pontos brilhantes que aparecem no céu
+            são estrelas. Alguns podem ser mundos inteiros
+            viajando silenciosamente pelo Sistema Solar.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     TRANSMISSÃO
+===================================================== -->
+
+<section class="card central">
+
+    <div class="central-header">
+
+        <div class="signal"></div>
+
+        TRANSMISSÃO RECEBIDA DA CENTRAL
+
+    </div>
+
+    <h2 class="card-title">
+        📡 Atenção, Detetive!
+    </h2>
+
+    <p>
+        Recebemos relatos de pontos luminosos incomuns no céu.
+        Alguns parecem estrelas, mas os nossos dados indicam
+        que podem ser planetas do Sistema Solar.
+    </p>
+
+    <br>
+
+    <p>
+        Sua missão é observar o céu, utilizar o Stellarium
+        como ferramenta de investigação e tentar identificar
+        esses possíveis mundos.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PROTOCOLO
+===================================================== -->
+
+<section class="card">
+
+    <h2 class="card-title">
+        🔎 Protocolo da Investigação
+    </h2>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                ETAPA 01
+            </div>
+
+            <div class="step-icon">
+                👀
+            </div>
+
+            <h3>
+                Observe
+            </h3>
+
+            <p>
+                Procure pontos luminosos que chamem sua atenção.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                ETAPA 02
+            </div>
+
+            <div class="step-icon">
+                🔭
+            </div>
+
+            <h3>
+                Investigue
+            </h3>
+
+            <p>
+                Utilize o Stellarium para comparar o céu real
+                com o mapa do céu.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                ETAPA 03
+            </div>
+
+            <div class="step-icon">
+                🪐
+            </div>
+
+            <h3>
+                Identifique
+            </h3>
+
+            <p>
+                Descubra se aquele ponto luminoso pode ser
+                um planeta.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                ETAPA 04
+            </div>
+
+            <div class="step-icon">
+                📡
+            </div>
+
+            <h3>
+                Registre
+            </h3>
+
+            <p>
+                Envie suas evidências para a Central
+                de Descobertas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DOSSIÊ DOS PLANETAS
+===================================================== -->
+
+<section class="card">
+
+    <h2 class="card-title">
+        🗂️ Dossiê dos Suspeitos
+    </h2>
+
+    <p style="margin-bottom: 30px;">
+        Conheça alguns dos principais planetas que podem ser
+        investigados no céu.
+    </p>
+
+
+    <div class="planet-grid">
+
+
+        <!-- MERCÚRIO -->
+
+        <article class="planet-card">
+
+            <img
+                class="planet-image"
+                src="../imagens/mercurio.jpg"
+                alt="Imagem de Mercúrio"
+            >
+
+            <div class="planet-info">
+
+                <div class="planet-symbol">
+                    ☿
+                </div>
+
+                <h3>
+                    Mercúrio
+                </h3>
+
+                <p>
+                    É o planeta mais próximo do Sol e também
+                    o menor planeta do Sistema Solar.
+                    Possui uma superfície cheia de crateras.
+                </p>
+
+                <div class="clue">
+
+                    <strong>💡 Pista:</strong>
+
+                    Pode ser observado próximo ao horizonte,
+                    pouco antes do nascer ou logo após o pôr do Sol.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- VÊNUS -->
+
+        <article class="planet-card">
+
+            <img
+                class="planet-image"
+                src="../imagens/venus.jpg"
+                alt="Imagem de Vênus"
+            >
+
+            <div class="planet-info">
+
+                <div class="planet-symbol">
+                    ♀
+                </div>
+
+                <h3>
+                    Vênus
+                </h3>
+
+                <p>
+                    É um dos objetos mais brilhantes do céu
+                    e possui uma atmosfera extremamente densa.
+                    É conhecido como Estrela-d'Alva ou Estrela-Vésper.
+                </p>
+
+                <div class="clue">
+
+                    <strong>💡 Pista:</strong>
+
+                    Se você encontrar um objeto extremamente
+                    brilhante próximo ao amanhecer ou entardecer,
+                    investigue Vênus.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MARTE -->
+
+        <article class="planet-card">
+
+            <img
+                class="planet-image"
+                src="../imagens/marte.jpg"
+                alt="Imagem de Marte"
+            >
+
+            <div class="planet-info">
+
+                <div class="planet-symbol">
+                    ♂
+                </div>
+
+                <h3>
+                    Marte
+                </h3>
+
+                <p>
+                    Conhecido como Planeta Vermelho,
+                    Marte é um planeta rochoso com
+                    enormes vulcões, vales e calotas polares.
+                </p>
+
+                <div class="clue">
+
+                    <strong>💡 Pista:</strong>
+
+                    Observe sua coloração: Marte pode apresentar
+                    uma aparência avermelhada ou alaranjada.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- JÚPITER -->
+
+        <article class="planet-card">
+
+            <img
+                class="planet-image"
+                src="../imagens/jupiter.jpg"
+                alt="Imagem de Júpiter"
+            >
+
+            <div class="planet-info">
+
+                <div class="planet-symbol">
+                    ♃
+                </div>
+
+                <h3>
+                    Júpiter
+                </h3>
+
+                <p>
+                    É o maior planeta do Sistema Solar.
+                    É um gigante gasoso e possui dezenas
+                    de luas conhecidas.
+                </p>
+
+                <div class="clue">
+
+                    <strong>💡 Pista:</strong>
+
+                    Pode aparecer como um ponto extremamente
+                    brilhante e constante no céu.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SATURNO -->
+
+        <article class="planet-card">
+
+            <img
+                class="planet-image"
+                src="../imagens/saturno.jpg"
+                alt="Imagem de Saturno"
+            >
+
+            <div class="planet-info">
+
+                <div class="planet-symbol">
+                    ♄
+                </div>
+
+                <h3>
+                    Saturno
+                </h3>
+
+                <p>
+                    É um gigante gasoso famoso pelo seu
+                    espetacular sistema de anéis,
+                    formado principalmente por partículas
+                    de gelo e rochas.
+                </p>
+
+                <div class="clue">
+
+                    <strong>💡 Pista:</strong>
+
+                    A olho nu parece apenas um ponto luminoso,
+                    mas no Stellarium você poderá confirmar
+                    sua verdadeira identidade.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FORMULÁRIO
+===================================================== -->
+
+<section class="card form-card">
+
+    <h2 class="card-title">
+        📝 Registrar Descoberta
+    </h2>
+
+    <p style="margin-bottom: 30px;">
+        Envie suas evidências para a Central de Descobertas.
+        Cada investigação ajuda a construir o mapa coletivo
+        dos Detetives do Universo.
+    </p>
+
+
+    <form id="formPlaneta">
+
+
+        <div>
+
+            <label>
+                👤 Nome do Detetive
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome"
+                required
+            >
+
+        </div>
+
+
+        <div>
+
+            <label>
+                🪐 Qual planeta você identificou?
+            </label>
+
+            <select id="planeta" required>
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option>
+                    Mercúrio
+                </option>
+
+                <option>
+                    Vênus
+                </option>
+
+                <option>
+                    Marte
+                </option>
+
+                <option>
+                    Júpiter
+                </option>
+
+                <option>
+                    Saturno
+                </option>
+
+                <option>
+                    Não consegui identificar
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-row">
+
+
+            <div>
+
+                <label>
+                    📅 Data da observação
+                </label>
+
+                <input
+                    type="date"
+                    id="data"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    🕒 Horário aproximado
+                </label>
+
+                <input
+                    type="time"
+                    id="horario"
+                    required
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <div class="form-row">
+
+
+            <div>
+
+                <label>
+                    🧭 Direção da observação
+                </label>
+
+                <select id="direcao" required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>
+                        Norte
+                    </option>
+
+                    <option>
+                        Sul
+                    </option>
+
+                    <option>
+                        Leste
+                    </option>
+
+                    <option>
+                        Oeste
+                    </option>
+
+                    <option>
+                        Nordeste
+                    </option>
+
+                    <option>
+                        Noroeste
+                    </option>
+
+                    <option>
+                        Sudeste
+                    </option>
+
+                    <option>
+                        Sudoeste
+                    </option>
+
+                    <option>
+                        Não consegui identificar
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    ✨ Como era o brilho?
+                </label>
+
+                <select id="brilho" required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>
+                        Muito brilhante
+                    </option>
+
+                    <option>
+                        Brilhante
+                    </option>
+
+                    <option>
+                        Pouco brilhante
+                    </option>
+
+                    <option>
+                        Difícil de observar
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <div>
+
+            <label>
+                🔭 Você utilizou o Stellarium?
+            </label>
+
+            <select id="stellarium" required>
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option>
+                    Sim
+                </option>
+
+                <option>
+                    Não
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                🧠 Relatório da investigação
+            </label>
+
+            <textarea
+                id="observacao"
+                placeholder="Conte para a Central o que você descobriu..."
+                required
+            ></textarea>
+
+        </div>
+
+
+        <button type="submit">
+
+            🚀 ENVIAR DESCOBERTA PARA A CENTRAL
+
+        </button>
+
+
+    </form>
+
+
+    <div id="mensagem"></div>
+
+</section>
+
+
+<a href="../index.html" class="back">
+
+    ← Voltar para a Base Espacial
+
+</a>
+
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   CONFIGURAÇÃO DO SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+"https://sforuydaippyuwmoxsts.supabase.co/rest/v1/observacoes_planetas";
+
+const SUPABASE_KEY =
+"sb_publishable_do1h8_r1y9z5IhpeKvciyg_Qci5TRhs";
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+const form = document.getElementById("formPlaneta");
+
+const mensagem = document.getElementById("mensagem");
+
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+
+    const dados = {
+
+        nome_aluno:
+            document.getElementById("nome").value,
+
+        planeta:
+            document.getElementById("planeta").value,
+
+        data_observacao:
+            document.getElementById("data").value,
+
+        horario:
+            document.getElementById("horario").value,
+
+        direcao:
+            document.getElementById("direcao").value,
+
+        brilho:
+            document.getElementById("brilho").value,
+
+        stellarium:
+            document.getElementById("stellarium").value,
+
+        observacao:
+            document.getElementById("observacao").value
+
+    };
+
+
+    try {
+
+        const resposta = await fetch(
+
+            SUPABASE_URL,
+
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/json",
+
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        "Bearer " + SUPABASE_KEY,
+
+                    "Prefer":
+                        "return=minimal"
+
+                },
+
+                body:
+
+                    JSON.stringify(dados)
+
+            }
+
+        );
+
+
+        if (!resposta.ok) {
+
+            const erro =
+                await resposta.text();
+
+            throw new Error(erro);
+
+        }
+
+
+        mensagem.style.display =
+            "block";
+
+        mensagem.className =
+            "sucesso";
+
+        mensagem.innerHTML =
+            "🛰️ Investigação enviada com sucesso para a Central, Detetive <strong>" +
+            dados.nome_aluno +
+            "</strong>!";
+
+
+        form.reset();
+
+
+        setTimeout(function() {
+
+            mensagem.style.display =
+                "none";
+
+        }, 6000);
+
+
+    }
+
+    catch (erro) {
+
+        mensagem.style.display =
+            "block";
+
+        mensagem.className =
+            "erro";
+
+        mensagem.innerHTML =
+            "❌ Erro ao enviar a investigação: " +
+            erro.message;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
