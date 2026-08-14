@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>
+
+        Missão 06 — Exploradores Espaciais
+
+    </title>
+
+
+    <style>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO GERAL
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at top,
+                    #152642,
+                    #030814 75%
+                );
+
+            color: white;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+        ====================================================== */
+
+        header {
+
+            padding: 22px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom:
+
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        .logo {
+
+            color: #64d8ff;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        .voltar {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.4);
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .voltar:hover {
+
+            background:
+
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            text-align: center;
+
+            padding: 70px 20px 45px;
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .hero .numero {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background:
+
+                rgba(100, 216, 255, 0.1);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.3);
+
+            color: #64d8ff;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 42px;
+
+            color: #64d8ff;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero p {
+
+            color: #c5d1df;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =====================================================
+           CARTÕES
+        ====================================================== */
+
+        .card {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(15, 36, 60, 0.95),
+                    rgba(5, 16, 30, 0.95)
+                );
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.18);
+
+            border-radius: 20px;
+
+            padding: 32px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .card h2 {
+
+            color: #64d8ff;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .card p {
+
+            color: #d2dce8;
+
+            line-height: 1.7;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =====================================================
+           PASSOS
+        ====================================================== */
+
+        .passos {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .passo {
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .passo span {
+
+            font-size: 28px;
+
+        }
+
+
+        .passo h3 {
+
+            color: #64d8ff;
+
+            margin: 12px 0;
+
+        }
+
+
+        .passo p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* =====================================================
+           ECLIPSES
+        ====================================================== */
+
+        .fenomenos-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .fenomeno {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+
+                rgba(255, 255, 255, 0.04);
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.15);
+
+        }
+
+
+        .fenomeno h3 {
+
+            color: white;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .fenomeno p {
+
+            color: #b8c7d9;
+
+            font-size: 15px;
+
+            margin-bottom: 0;
+
+        }
+
+
+        /* =====================================================
+           FORMULÁRIO
+        ====================================================== */
+
+        form {
+
+            margin-top: 15px;
+
+        }
+
+
+        .campo {
+
+            margin-bottom: 22px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #d9e7f4;
+
+            font-weight: bold;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            border:
+
+                1px solid
+                rgba(100, 216, 255, 0.25);
+
+            background:
+
+                rgba(255, 255, 255, 0.06);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+
+        select option {
+
+            background: #071423;
+
+            color: white;
+
+        }
+
+
+        textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+
+            line-height: 1.6;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #64d8ff;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ====================================================== */
+
+        .botao-enviar {
+
+            width: 100%;
+
+            padding: 17px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #64d8ff;
+
+            color: #06111f;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .botao-enviar:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+
+        }
+
+
+        .botao-enviar:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =====================================================
+           MENSAGEM
+        ====================================================== */
+
+        #mensagem {
+
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           DESTAQUE
+        ====================================================== */
+
+        .destaque {
+
+            border-left:
+
+                4px solid #64d8ff;
+
+            padding: 20px;
+
+            background:
+
+                rgba(100, 216, 255, 0.06);
+
+            border-radius: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 18px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .passos,
+            .fenomenos-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .card {
+
+                padding: 24px;
+
+            }
+
+        }
+
+
+    
+        /* MISSÕES ESPACIAIS REAIS */
+
+        .missoes-reais-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 25px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .missao-real {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+
+        .missao-real:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+
+        }
+
+
+        .missao-real img {
+
+            width: 100%;
+
+            height: 210px;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .missao-real-conteudo {
+
+            padding: 20px;
+
+        }
+
+
+        .missao-real h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        .missao-real p {
+
+            line-height: 1.6;
+
+        }
+
+
+        .credito-imagem {
+
+            font-size: 0.78rem;
+
+            opacity: 0.7;
+
+            margin-top: 12px;
+
+        }
+
+
+
+    
+
+        .botao-limpar {
+
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            background: transparent;
+
+            color: #dbeafe;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+        }
+
+
+        .botao-limpar:hover {
+
+            background: rgba(255, 255, 255, 0.08);
+
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+
+        <div class="logo">
+
+            🌌 Além das Estrelas
+
+        </div>
+
+
+        <a
+            href="../index.html"
+            class="voltar"
+        >
+
+            ← Voltar ao início
+
+        </a>
+
+
+    </header>
+
+
+    <section class="hero">
+
+
+        <div class="numero">
+
+            🚀 MISSÃO 06
+
+        </div>
+
+
+        <h1>
+
+            Exploradores Espaciais
+
+        </h1>
+
+
+        <p>
+
+            O ser humano desenvolveu tecnologias capazes de atravessar
+            grandes distâncias e investigar mundos além da Terra.
+            Nesta missão, você será um Explorador Espacial e deverá
+            investigar uma missão científica, seu destino, seus objetivos
+            e as descobertas realizadas.
+
+        </p>
+
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- O DESAFIO -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🎯 O Desafio
+
+            </h2>
+
+
+            <p>
+
+                A exploração espacial permite investigar planetas, luas,
+                asteroides e regiões distantes do Universo. Sua missão
+                será escolher uma missão espacial e reunir pistas sobre
+                seu destino, objetivo, tecnologias e descobertas.
+
+            </p>
+
+
+            <div class="destaque">
+
+                <p>
+
+                    🔎 <strong>Missão:</strong>
+
+                    Escolha uma missão espacial, investigue seu destino,
+                    seus objetivos e suas principais descobertas e reúna
+                    evidências para apresentar sua conclusão.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- COMO INVESTIGAR -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🧭 Como realizar a investigação?
+
+            </h2>
+
+
+            <div class="passos">
+
+
+                <div class="passo">
+
+                    <span>🔎</span>
+
+                    <h3>
+
+                        1. Investigue
+
+                    </h3>
+
+                    <p>
+
+                        Utilize vídeos, pesquisas, imagens, simulações
+                        ou outras fontes para conhecer uma missão
+                        ou exploração espacial.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>🌞🌍🌑</span>
+
+                    <h3>
+
+                        2. Descubra
+
+                    </h3>
+
+                    <p>
+
+                        Descubra qual foi o destino da missão, quais
+                        objetivos ela possuía e quais tecnologias
+                        ajudaram na exploração.
+
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <span>📡</span>
+
+                    <h3>
+
+                        3. Registre
+
+                    </h3>
+
+                    <p>
+
+                        Reúna suas pistas, destaque a principal descoberta
+                        e envie sua investigação para a Central dos
+                        Detetives.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- EXPLORAÇÃO ESPACIAL -->
+
+        <section class="card">
+
+            <h2>
+
+                🌌 Destinos que você pode investigar
+
+            </h2>
+
+            <div class="fenomenos-grid">
+
+                <div class="fenomeno">
+
+                    <h3>
+
+                        🌕 Lua
+
+                    </h3>
+
+                    <p>
+
+                        Investigue missões que estudaram a Lua,
+                        sua superfície, origem e exploração humana.
+
+                    </p>
+
+                </div>
+
+                <div class="fenomeno">
+
+                    <h3>
+
+                        🔴 Marte
+
+                    </h3>
+
+                    <p>
+
+                        Descubra como sondas e robôs exploram
+                        o planeta vermelho.
+
+                    </p>
+
+                </div>
+
+                <div class="fenomeno">
+
+                    <h3>
+
+                        🪐 Outros planetas
+
+                    </h3>
+
+                    <p>
+
+                        Investigue missões enviadas para estudar
+                        planetas, luas e outros corpos do Sistema Solar.
+
+                    </p>
+
+                </div>
+
+                <div class="fenomeno">
+
+                    <h3>
+
+                        🌌 Espaço profundo
+
+                    </h3>
+
+                    <p>
+
+                        Explore missões que viajaram para regiões
+                        distantes do Universo.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+        <!-- MISSÕES ESPACIAIS REAIS -->
+
+        <section class="card">
+
+
+            <h2>
+
+                🛰️ Missões reais para inspirar sua investigação
+
+            </h2>
+
+
+            <p>
+
+                Explore alguns exemplos reais da história da exploração espacial.
+                Você pode escolher uma destas missões ou investigar outra missão
+                que desperte sua curiosidade.
+
+            </p>
+
+
+            <div class="missoes-reais-grid">
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://www.nasa.gov/wp-content/uploads/2023/03/as11-40-5903orig.jpg"
+                        alt="Astronauta Buzz Aldrin na superfície da Lua durante a Apollo 11"
+                    >
+
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>🌕 Apollo 11</h3>
+
+                        <p class="credito-imagem">Imagem: NASA</p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://images-assets.nasa.gov/image/PIA19808/PIA19808~orig.jpg"
+                        alt="Rover Curiosity explorando Marte"
+                    >
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>🔴 Curiosity</h3>
+
+                        <p class="credito-imagem">Imagem: NASA/JPL-Caltech</p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://images-assets.nasa.gov/image/PIA17046/PIA17046~orig.jpg"
+                        alt="Representação da sonda Voyager 1 no espaço"
+                    >
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>🛰️ Voyager 1</h3>
+
+                        <p class="credito-imagem">Imagem: NASA/JPL-Caltech</p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://images-assets.nasa.gov/image/PIA19330/PIA19330~orig.jpg"
+                        alt="Telescópio Espacial James Webb no espaço"
+                    >
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>🔭 James Webb</h3>
+
+                        <p class="credito-imagem">Imagem: NASA/ESA/CSA</p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://images-assets.nasa.gov/image/PIA08329/PIA08329~orig.jpg"
+                        alt="Sonda Cassini próxima a Saturno e seus anéis"
+                    >
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>🪐 Cassini-Huygens</h3>
+
+                        <p class="credito-imagem">Imagem: NASA/JPL-Caltech</p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="missao-real">
+
+                    <img
+                        src="https://images-assets.nasa.gov/image/PIA22835/PIA22835~orig.jpg"
+                        alt="Parker Solar Probe estudando o Sol"
+                    >
+
+                    <div class="missao-real-conteudo">
+
+                        <h3>☀️ Parker Solar Probe</h3>
+
+                        <p class="credito-imagem">Imagem: NASA/Johns Hopkins APL</p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+<!-- FORMULÁRIO -->
+
+        <section class="card">
+
+
+            <h2>
+
+                📡 Envie sua investigação
+
+            </h2>
+
+
+            <p>
+
+                Preencha cuidadosamente os dados da sua investigação
+                sobre a missão espacial escolhida.
+
+            </p>
+
+
+            <form id="formulario-espaco">
+
+                <div class="campo">
+
+                    <label for="nome">
+
+                        🧑‍🚀 Nome do Explorador
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        required
+                        placeholder="Digite seu nome"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="missao_espacial">
+
+                        🚀 Qual missão espacial você investigou?
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="missao_espacial"
+                        required
+                        placeholder="Ex.: Apollo 11, Voyager 1, Curiosity..."
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="destino">
+
+                        🌍 Qual foi o destino da missão?
+
+                    </label>
+
+                    <select
+                        id="destino"
+                        required
+                    >
+
+                        <option value="">
+
+                            Selecione uma opção
+
+                        </option>
+
+                        <option value="Lua">
+
+                            🌕 Lua
+
+                        </option>
+
+                        <option value="Marte">
+
+                            🔴 Marte
+
+                        </option>
+
+                        <option value="Outro planeta">
+
+                            🪐 Outro planeta
+
+                        </option>
+
+                        <option value="Asteroide ou cometa">
+
+                            ☄️ Asteroide ou cometa
+
+                        </option>
+
+                        <option value="Espaço profundo">
+
+                            🌌 Espaço profundo
+
+                        </option>
+
+                        <option value="Outro destino">
+
+                            🚀 Outro destino
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="objetivo">
+
+                        🎯 Qual era o principal objetivo da missão?
+
+                    </label>
+
+                    <textarea
+                        id="objetivo"
+                        required
+                        placeholder="Explique o que a missão buscava investigar, explorar ou descobrir..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="descoberta">
+
+                        🔍 Qual foi a principal descoberta ou resultado?
+
+                    </label>
+
+                    <textarea
+                        id="descoberta"
+                        required
+                        placeholder="Descreva uma descoberta ou resultado importante obtido pela missão..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="tecnologia">
+
+                        🤖 Qual tecnologia, nave ou equipamento foi utilizado?
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tecnologia"
+                        required
+                        placeholder="Ex.: rover, sonda, foguete, telescópio..."
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="evidencias">
+
+                        🧩 Quais pistas e evidências você encontrou?
+
+                    </label>
+
+                    <textarea
+                        id="evidencias"
+                        required
+                        placeholder="Descreva as informações que ajudaram você durante a investigação..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="conclusao">
+
+                        📝 Conclusão do Explorador
+
+                    </label>
+
+                    <textarea
+                        id="conclusao"
+                        required
+                        placeholder="Depois da investigação, qual é sua principal conclusão sobre essa exploração?"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-enviar"
+                    id="botao-enviar"
+                >
+
+                    🚀 Enviar exploração para a Central
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-limpar"
+                    id="botao-limpar"
+                >
+
+                    🗑️ Limpar resposta salva
+
+                </button>
+
+            </form>
+
+
+            <div id="mensagem"></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+
+        /* =====================================================
+           CONFIGURAÇÃO DO SUPABASE
+        ====================================================== */
+
+        const SUPABASE_URL =
+            "https://sforuydaippyuwmoxsts.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_do1h8_r1y9z5IhpeKvciyg_Qci5TRhs";
+
+
+        /* =====================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const formulario =
+            document.getElementById(
+                "formulario-espaco"
+            );
+
+
+        const mensagem =
+            document.getElementById(
+                "mensagem"
+            );
+
+
+        const botaoEnviar =
+            document.getElementById(
+                "botao-enviar"
+            );
+
+
+        const botaoLimpar =
+            document.getElementById(
+                "botao-limpar"
+            );
+
+
+        /* =====================================================
+           SALVAMENTO LOCAL DA MISSÃO 06
+        ====================================================== */
+
+        const CHAVE_RASCUNHO =
+            "rascunho_missao_espaco";
+
+
+        const CHAVE_ULTIMO_ENVIO =
+            "ultimo_envio_missao_espaco";
+
+
+        const camposSalvos = [
+
+            "nome",
+
+            "missao_espacial",
+
+            "destino",
+
+            "objetivo",
+
+            "descoberta",
+
+            "tecnologia",
+
+            "evidencias",
+
+            "conclusao"
+
+        ];
+
+
+        function obterDadosFormulario() {
+
+            const dados = {};
+
+
+            camposSalvos.forEach(
+
+                function(id) {
+
+                    dados[id] =
+                        document
+                            .getElementById(id)
+                            .value;
+
+                }
+
+            );
+
+
+            return dados;
+
+        }
+
+
+        function salvarRascunho() {
+
+            localStorage.setItem(
+
+                CHAVE_RASCUNHO,
+
+                JSON.stringify(
+                    obterDadosFormulario()
+                )
+
+            );
+
+        }
+
+
+        function carregarRascunho() {
+
+            const rascunho =
+                localStorage.getItem(
+                    CHAVE_RASCUNHO
+                );
+
+
+            if (!rascunho) return;
+
+
+            try {
+
+                const dados =
+                    JSON.parse(rascunho);
+
+
+                camposSalvos.forEach(
+
+                    function(id) {
+
+                        if (
+                            dados[id] !== undefined
+                        ) {
+
+                            document
+                                .getElementById(id)
+                                .value =
+                                    dados[id];
+
+                        }
+
+                    }
+
+                );
+
+
+                mensagem.textContent =
+                    "💾 Sua resposta anterior foi recuperada deste dispositivo.";
+
+            }
+
+
+            catch (erro) {
+
+                console.error(
+                    "Erro ao recuperar rascunho:",
+                    erro
+                );
+
+            }
+
+        }
+
+
+        function gerarAssinatura(dados) {
+
+            return JSON.stringify(dados);
+
+        }
+
+
+        camposSalvos.forEach(
+
+            function(id) {
+
+                const campo =
+                    document.getElementById(id);
+
+
+                campo.addEventListener(
+
+                    "input",
+
+                    salvarRascunho
+
+                );
+
+
+                campo.addEventListener(
+
+                    "change",
+
+                    salvarRascunho
+
+                );
+
+            }
+
+        );
+
+
+        botaoLimpar.addEventListener(
+
+            "click",
+
+            function() {
+
+                const confirmar =
+                    confirm(
+                        "Deseja apagar a resposta salva neste dispositivo?"
+                    );
+
+
+                if (!confirmar) return;
+
+
+                formulario.reset();
+
+
+                localStorage.removeItem(
+                    CHAVE_RASCUNHO
+                );
+
+
+                localStorage.removeItem(
+                    CHAVE_ULTIMO_ENVIO
+                );
+
+
+                mensagem.textContent =
+                    "🗑️ A resposta salva foi apagada deste dispositivo.";
+
+            }
+
+        );
+
+
+        carregarRascunho();
+
+
+        /* =====================================================
+           ENVIO DA INVESTIGAÇÃO
+        ====================================================== */
+
+        formulario.addEventListener(
+
+            "submit",
+
+            async function(evento) {
+
+
+                evento.preventDefault();
+
+
+                const dados = {
+
+                    nome_aluno:
+
+                        document
+                            .getElementById("nome")
+                            .value
+                            .trim(),
+
+                    missao_espacial:
+
+                        document
+                            .getElementById("missao_espacial")
+                            .value
+                            .trim(),
+
+                    destino:
+
+                        document
+                            .getElementById("destino")
+                            .value,
+
+                    objetivo:
+
+                        document
+                            .getElementById("objetivo")
+                            .value
+                            .trim(),
+
+                    descoberta:
+
+                        document
+                            .getElementById("descoberta")
+                            .value
+                            .trim(),
+
+                    tecnologia:
+
+                        document
+                            .getElementById("tecnologia")
+                            .value
+                            .trim(),
+
+                    evidencias:
+
+                        document
+                            .getElementById("evidencias")
+                            .value
+                            .trim(),
+
+                    conclusao:
+
+                        document
+                            .getElementById("conclusao")
+                            .value
+                            .trim()
+
+                };
+
+
+                salvarRascunho();
+
+
+                const assinaturaAtual =
+                    gerarAssinatura(
+                        obterDadosFormulario()
+                    );
+
+
+                const ultimoEnvio =
+                    localStorage.getItem(
+                        CHAVE_ULTIMO_ENVIO
+                    );
+
+
+                if (
+                    ultimoEnvio === assinaturaAtual
+                ) {
+
+                    mensagem.textContent =
+                        "ℹ️ Esta mesma resposta já foi enviada. Edite algum campo antes de enviar novamente.";
+
+                    return;
+
+                }
+
+
+                botaoEnviar.disabled = true;
+
+
+                botaoEnviar.textContent =
+                    "📡 Enviando exploração...";
+
+
+                mensagem.textContent = "";
+
+
+                try {
+
+
+                    const resposta =
+                        await fetch(
+
+                            `${SUPABASE_URL}/rest/v1/observacoes_espaco`,
+
+                            {
+
+                                method: "POST",
+
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+
+                                    "apikey":
+                                        SUPABASE_KEY,
+
+
+                                    "Authorization":
+                                        `Bearer ${SUPABASE_KEY}`,
+
+
+                                    "Prefer":
+                                        "return=minimal"
+
+                                },
+
+
+                                body:
+
+                                    JSON.stringify(dados)
+
+                            }
+
+                        );
+
+
+                    if (!resposta.ok) {
+
+
+                        const erro =
+                            await resposta.text();
+
+
+                        throw new Error(erro);
+
+                    }
+
+
+                    localStorage.setItem(
+
+                        CHAVE_ULTIMO_ENVIO,
+
+                        assinaturaAtual
+
+                    );
+
+
+                    mensagem.textContent =
+                        "✅ Exploração enviada para a Central! Sua resposta também continua salva neste dispositivo para consulta ou edição.";
+
+
+                    // O formulário não é limpo.
+                    // A resposta permanece disponível para o estudante editar.
+
+                }
+
+
+                catch (erro) {
+
+
+                    console.error(erro);
+
+
+                    mensagem.textContent =
+                        "❌ Não foi possível enviar sua exploração. Verifique sua conexão e tente novamente.";
+
+                }
+
+
+                finally {
+
+
+                    botaoEnviar.disabled = false;
+
+
+                    botaoEnviar.textContent =
+                        "🚀 Enviar exploração para a Central";
+
+                }
+
+
+            }
+
+        );
+
+
+    </script>
+
+
+</body>
+
+
+</html>
